@@ -9,11 +9,14 @@
 
 const numRandom = [];
 
+while (numRandom.length < 5) {
+    const num = randomNum(1,99);
+    if (! numRandom.includes(num)) {
+        numRandom.push(num);
+    }
+ }
 
-
-
-
-
+document.getElementById('display').innerHTML = numRandom;
 
 
 
@@ -22,6 +25,7 @@ const numRandom = [];
 
 /*funzioni */
 
-function randomNum (min, max) {
-    return Math.floor(Math.random() * (max - min +1)) +min;
-}
+function randomNum(min, max) {
+
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+} 
