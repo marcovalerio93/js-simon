@@ -22,12 +22,28 @@ const displayDom = document.getElementById('display').innerHTML = numRandom;
 const textDom = document.getElementById('text')
 
 displayDom.innerHTML = numRandom;
-
-2//
+ 
 
 setTimeout(timeDom, 30000);
 
-setTimeout(numInput, 31000);
+setTimeout(function () {
+    //inserisco numeri
+    const numUser = numberInput();
+    
+    //verifico numeri
+    const numCheck = [];
+    for (let i = 0; i < numRandom.length; i++) {
+        if ( numUser.includes (numRandom[i])) {
+            numCheck.push(numRandom[i]);
+        }
+    }
+    
+    displayDom.innerHTML = numCheck
+    textDom.innerHTML = `Hai indovinato ${numCheck.length}`;
+
+}, 31000);
+
+
 
 
 
@@ -51,14 +67,16 @@ function prova(){
      
 }
 
-function numInput() {
-    const num = [];
-    while (num.length < 5) {
+function numberInput() {
+    const numUser = [];
+    while (numUser.length < 5) {
         const numInput = prompt('inserisci numeri');
-        if (! num.includes(numInput)) {
-            num.push(numInput);
+        if (! numUser.includes(numInput)) {
+            numUser.push(numInput);
         }
     }
     console.log(num);
-
 }
+
+
+ 
