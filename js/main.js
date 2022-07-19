@@ -7,6 +7,8 @@
 6 - stampo risultati
  */
 
+
+//1
 const numRandom = [];
 
 while (numRandom.length < 5) {
@@ -16,7 +18,16 @@ while (numRandom.length < 5) {
     }
  }
 
-document.getElementById('display').innerHTML = numRandom;
+const displayDom = document.getElementById('display').innerHTML = numRandom;
+const textDom = document.getElementById('text')
+
+displayDom.innerHTML = numRandom;
+
+2//
+
+setTimeout(timeDom, 30000);
+
+setTimeout(numInput, 31000);
 
 
 
@@ -29,3 +40,25 @@ function randomNum(min, max) {
 
     return Math.floor(Math.random() * (max - min + 1)) + min;
 } 
+
+function timeDom() {
+    displayDom.innerHtml = '';
+    textDom.innerHTML = 'Quali erano i 5 numeri?'
+} 
+
+function prova(){
+    const prova= prompt('prova');
+     
+}
+
+function numInput() {
+    const num = [];
+    while (num.length < 5) {
+        const numInput = prompt('inserisci numeri');
+        if (! num.includes(numInput)) {
+            num.push(numInput);
+        }
+    }
+    console.log(num);
+
+}
